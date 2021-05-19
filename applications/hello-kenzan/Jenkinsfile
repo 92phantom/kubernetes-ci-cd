@@ -14,10 +14,14 @@ node {
 
     stage "Build"
     
+       when {
         sh "docker build -t ${imageName} part1/hello-kenzan"
+       }
+       steps {
         echo "Building $BRANCH_NAME"
         echo "Building $TAG_NAME"
-    
+       }
+       
     stage "Push"
 
         sh "docker push ${imageName}"
