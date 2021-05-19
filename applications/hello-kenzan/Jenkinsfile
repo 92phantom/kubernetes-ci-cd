@@ -15,6 +15,8 @@ node {
     stage "Build"
     
         sh "docker build -t ${imageName} part1/hello-kenzan"
+        echo "Building $BRANCH_NAME"
+        echo "Building $TAG_NAME"
     
     stage "Push"
 
